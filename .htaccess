@@ -1,0 +1,49 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Hide the application and system directories by redirecting the request to index.php
+RewriteRule ^(application|system|\.svn) index.php/$1 [L]
+RewriteRule ^admin\/(.*) ci/index.php/$1 [L]
+RewriteRule ^activity_trackers\/(.*) ci/index.php/$1 [L]
+RewriteRule ^payment\/(.*) ci/index.php/$1 [L]
+RewriteRule ^home\/(.*) ci/index.php/$1 [L]
+RewriteRule ^timwe\/(.*) ci/index.php/$1 [L]
+
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+
+<IfModule mod_php5.c>
+php_value post_max_size 200M
+php_value upload_max_filesize 200M
+php_value memory_limit 300M
+php_value max_execution_time 259200
+php_value max_input_time 259200
+php_value session.gc_maxlifetime 1200
+</IfModule>
+
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x- javascript application/javascript
+</ifmodule>
+
+<ifmodule mod_expires.c>
+<Filesmatch "\.(jpg|jpeg|png|gif|js|css|swf|ico|woff|mp3)$">
+    ExpiresActive on
+    ExpiresDefault "access plus 7 days"
+</Filesmatch>
+</ifmodule>
+
+<FilesMatch "\.(css|js|eot|ttf|woff|svg|otf|jpg|jpeg|png)$">
+Header set Cache-Control "max-age=29030400, public, must-revalidate"
+</FilesMatch>
+FileETag none

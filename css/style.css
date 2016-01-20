@@ -1,0 +1,83 @@
+.jumbotron .container {
+    max-width: 100%;
+    margin-top: 0;
+}
+
+.jumbotron {
+    padding-top: 0;
+    background: white;
+}
+
+.footer {
+    background-repeat: no-repeat;
+    margin-top: -36px;
+    background-color: #0064a2;
+}
+
+/*
+.top-banner{
+    padding-left: 0;
+    margin-left: -15px;
+    margin-right: 23px;
+    padding-right: 167px;
+}
+*/
+
+.form-horizontal .control-label {
+    padding-top: 7px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.register {
+    padding-top: 50px;
+    padding-left: 59px;
+}
+
+
+
+.ftext a {color:white;}
+button.btn.btn-default.submit {
+    color: #0064a2;
+    border-color: #0064a2;
+}
+
+.mob {
+
+    margin-top: -70px;
+    padding-left: 838px;
+}
+
+.container.calendar {
+    margin-top: 44px;
+}
+
+button.btn.btn-primary.date {
+    width: 57%;
+}
+
+
+button.btn.btn-default.time {
+    border-color: #337AB7 !important;
+    background-color: white;
+    padding: 2px 35px;
+    height: 40px;
+    width: 110px;
+    margin-top : 10px;
+    margin-left: -106px;
+}
+
+
+button.btn.btn-default.timed {
+    padding: 2px 35px;
+}
+
+.timeslotlabel{
+    margin-top: 0px !important;
+    margin-left: -15px;
+}
+
+.step3div{
+    width : 850px;
+    margin-left : 0px;
+}
